@@ -21,12 +21,23 @@
     }
 ------------
 
+ ### setRetainInstance(true) 
+    When setRetainInstance(true) is called on a Fragment, the Fragment will not be destroyed and recreated when a configuration change occurs (like a screen rotation). Instead, it will be detached from the current activity and reattached to the new activity.
+   
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Retain the instance across configuration changes
+        setRetainInstance(true);
+    }
+
 #### What is lifecycle of DialogFragment
   DialogFragment class, which is designed to better integrate with the Fragment lifecycle and provides more consistent behavior across 
   different Android versions.
 
    DialogFragment
    life cycle is similar to the life cycle of a fragment
+
 
 
     onAttach
